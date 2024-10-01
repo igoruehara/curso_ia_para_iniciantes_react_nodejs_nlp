@@ -1,0 +1,89 @@
+/* frontend/src/components/EntityManager.css */
+
+.entity-manager-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .entity-manager-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .entity-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .entity-form h3 {
+    margin-bottom: 10px;
+  }
+  
+  .entity-form input,
+  .entity-form select,
+  .entity-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .entity-form textarea {
+    height: 80px;
+    resize: vertical;
+  }
+  
+  .entity-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .entity-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .entity-table th, .entity-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .entity-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .entity-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .entity-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .entity-table button {
+    padding: 5px 10px;
+    margin-right: 5px;
+  }
+  
+  .entity-manager-container button {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .entity-manager-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .entity-table pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  

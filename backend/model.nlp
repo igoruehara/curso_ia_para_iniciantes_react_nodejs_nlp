@@ -1,0 +1,264 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "forceNER": true,
+    "threshold": 0.5,
+    "tag": "nlp",
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "de,gost,ped,pizz,uma": {
+            "intent": "pedir_pizza",
+            "domain": "default"
+          },
+          "a,de,gost,minh,reset,senh": {
+            "intent": "central_atendimento",
+            "domain": "default"
+          },
+          "a,minh,precis,reset,senh": {
+            "intent": "central_atendimento",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "pedir_pizza": "default",
+          "central_atendimento": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "gostaria de pedir uma pizza",
+            "intent": "pedir_pizza"
+          },
+          {
+            "domain": "default",
+            "utterance": "gostaria de resetar a minha senha",
+            "intent": "central_atendimento"
+          },
+          {
+            "domain": "default",
+            "utterance": "preciso resetar a minha senha",
+            "intent": "central_atendimento"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "gost": 1,
+              "de": 1,
+              "ped": 1,
+              "uma": 1,
+              "pizz": 1,
+              "reset": 1,
+              "a": 1,
+              "minh": 1,
+              "senh": 1,
+              "precis": 1
+            },
+            "intents": {
+              "pedir_pizza": 1,
+              "central_atendimento": 1
+            },
+            "intentFeatures": {
+              "pedir_pizza": {
+                "gost": 1,
+                "de": 1,
+                "ped": 1,
+                "uma": 1,
+                "pizz": 1
+              },
+              "central_atendimento": {
+                "gost": 1,
+                "de": 1,
+                "reset": 1,
+                "a": 1,
+                "minh": 1,
+                "senh": 1,
+                "precis": 1
+              }
+            },
+            "featuresToIntent": {
+              "gost": [
+                "pedir_pizza",
+                "central_atendimento"
+              ],
+              "de": [
+                "pedir_pizza",
+                "central_atendimento"
+              ],
+              "ped": [
+                "pedir_pizza"
+              ],
+              "uma": [
+                "pedir_pizza"
+              ],
+              "pizz": [
+                "pedir_pizza"
+              ],
+              "reset": [
+                "central_atendimento"
+              ],
+              "a": [
+                "central_atendimento"
+              ],
+              "minh": [
+                "central_atendimento"
+              ],
+              "senh": [
+                "central_atendimento"
+              ],
+              "precis": [
+                "central_atendimento"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "gost",
+                "de",
+                "ped",
+                "uma",
+                "pizz",
+                "reset",
+                "a",
+                "minh",
+                "senh",
+                "precis"
+              ],
+              "intents": [
+                "pedir_pizza",
+                "central_atendimento"
+              ],
+              "perceptrons": [
+                [
+                  1.8991466760635376,
+                  1.8991466760635376,
+                  3.1872918605804443,
+                  3.1872918605804443,
+                  3.1872918605804443,
+                  -1.2150722742080688,
+                  -1.2150722742080688,
+                  -1.2150722742080688,
+                  -1.2150722742080688,
+                  -0.008719140663743019,
+                  0.9383559106973005
+                ],
+                [
+                  0.6417903304100037,
+                  0.6417903304100037,
+                  -0.7717953324317932,
+                  -0.7717953324317932,
+                  -0.7717953324317932,
+                  2.9453628063201904,
+                  2.9453628063201904,
+                  2.9453628063201904,
+                  2.9453628063201904,
+                  1.5299054384231567,
+                  1.082574470902761
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "gostaria de pedir uma pizza"
+      ],
+      [
+        "pt",
+        "gostaria de resetar a minha senha"
+      ],
+      [
+        "pt",
+        "preciso resetar a minha senha"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "pedir_pizza": [
+          {
+            "answer": "Olá para pedir a sua pizza basta acessar o pizza.com"
+          }
+        ],
+        "central_atendimento": [
+          {
+            "answer": "Para resetar a sua senha ligue no 0800 12345 0000."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
